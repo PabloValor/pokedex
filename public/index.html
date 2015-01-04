@@ -38,13 +38,13 @@
 				</div>
 				<div class="col-md-6">
 					<ul class="nav nav-tabs nav-justified">
-						<li class="active"><a href="#">Pokedex</a></li>
-						<li><a href="#">Stats</a></li>
-						<li><a href="#">Evolution</a></li>
+						<li ng-class="{active : tab === 1}"><a ng-click = "tab = 1">Pokedex</a></li>
+						<li ng-class="{active : tab === 2}"><a ng-click = "tab = 2">Stats</a></li>
+						<li ng-class="{active : tab === 3}"><a ng-click = "tab = 3">Evolution</a></li>
 					</ul>
-					<div class="tab-content">
+					<div ng-init="tab = 1" class="tab-content">
 						<!-- Pokedex -->
-						<div>
+						<div ng-show = "tab === 1">
 							<ul class="list-group">
 								<li class="list-group-item">
 									<strong>Type</strong>
@@ -72,7 +72,7 @@
 							</ul>
 						</div>
 						<!-- Stats -->
-						<div>
+						<div ng-show = "tab === 2">
 							<ul class="list-group">
 								<li class="list-group-item">
 									<strong>HP</strong>
@@ -105,7 +105,7 @@
 							</ul>
 						</div>
 						<!-- Evolution -->
-						<div>
+						<div ng-show = "tab === 3">
 							<div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
 								<a href="#">
 									<img ng-src="build/img/pokemons/{{pokemon | lowercase}}.jpg" alt="{{pokemon}} image" width="160">
@@ -113,7 +113,6 @@
 								</a>
 								<span ng-hide="$last" class="glyphicon glyphicon-chevron-down"></span>
 							</div>
-							
 						</div>
 					</div>
 				</div>
