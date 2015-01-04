@@ -15,7 +15,7 @@ gulp.task('compress-javascript', function() {
 
 gulp.task('less', function() {
 	gulp.src('./public/css/main.less')
-		.pipe(less({compress: true}))
+		.pipe(less())
 		.on('error', gutil.log)
 		.pipe(gulp.dest('./public/build/css'))
 		.pipe(refresh());
