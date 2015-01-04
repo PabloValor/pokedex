@@ -1,1 +1,1 @@
-!function(){alert("soy una funcion")}();
+!function(){var o=angular.module("pokedex",[]);o.controller("PokemonController",function(){this.pokemon={id:1,name:"Bulbasour",species:"Seed Pokemon",type:["Grass","Poison"],height:"2'4",weight:"15.2 lbs",abillities:["Overgrow","Chlorophyll"]}})}();
