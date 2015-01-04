@@ -1,0 +1,21 @@
+{
+  "name": "pokedex",
+  "version": "0.0.0",
+  "description": "pokedex with angularjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PabloValor/pokedex.git"
+  },
+  "author": "Pablo Valor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PabloValor/pokedex/issues"
+  },
+  "dependencies": {
+    "express": "~4.10.6"
+  }
+}
