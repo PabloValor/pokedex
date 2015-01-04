@@ -23,4 +23,26 @@ body {
 	}
 }
 
+.type- {
+	&grass {
+		background: green;
+	}
+	&poison {
+		background: purple;
+	}
+}
+
+ul.abillities{
+	li {
+		display: inline-block;
+		margin-left: 10px;
+		padding-right: 10px;
+		border-right: 1px solid rgb(255, 202, 202);
+		&:last-child {
+			border-right: none;
+			padding-right: inherit;
+		}
+	}
+
+}
 

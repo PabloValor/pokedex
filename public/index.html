@@ -45,16 +45,27 @@
 					<div class="tab-content">
 						<ul class="list-group">
 							<li class="list-group-item">
-							<strong>Type: </strong><span class="pull-right">{{pkmCtrl.pokemon.type.join(', ')}}</span>
+								<strong>Type: </strong>
+								<span  ng-repeat ="type in pkmCtrl.pokemon.type" class="pull-right">
+									<span class="label label-primary type-{{type | lowercase}}">
+										{{type}}
+									</span>	
+								</span>
 							</li>
 							<li class="list-group-item">
-							<strong>Height: </strong><span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
+								<strong>Height: </strong><span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
 							</li>
 							<li class="list-group-item">
-							<strong>Weight: </strong><span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
+								<strong>Weight: </strong><span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
 							</li>
 							<li class="list-group-item">
-							<strong>Abillities: </strong><span class="pull-right">{{pkmCtrl.pokemon.abillities.join(', ')}}</span>
+								<strong>Abillities: </strong><span class="pull-right">
+									<ul class="abillities">
+										<li ng-repeat="ability in pkmCtrl.pokemon.abillities">
+											{{ability}}
+										</li>
+									</ul>
+								</span>
 							</li>
 						</ul>
 					</div>
