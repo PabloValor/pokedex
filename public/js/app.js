@@ -3,7 +3,7 @@
 
 	app.controller('PokemonController', function() {
 		this.pokemon = {
-			id: 001,
+			id: '001',
 			name: 'Bulbasour',
 			species: 'Seed Pokemon',
 			type: ['Grass', 'Poison'],

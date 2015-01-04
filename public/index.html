@@ -104,6 +104,17 @@
 								</li>
 							</ul>
 						</div>
+						<!-- Evolution -->
+						<div>
+							<div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
+								<a href="#">
+									<img ng-src="build/img/pokemons/{{pokemon | lowercase}}.jpg" alt="{{pokemon}} image" width="160">
+									<p><strong>{{pokemon}}</strong></p>
+								</a>
+								<span ng-hide="$last" class="glyphicon glyphicon-chevron-down"></span>
+							</div>
+							
+						</div>
 					</div>
 				</div>
 			</div>
