@@ -36,15 +36,15 @@
 				<div class="col-md-6">
 					<img class="avatar center-block" ng-src="build/img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg" alt="{{pkmCtrl.pokemon.name | lowercase}} image">
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6" ng-controller="TabsController as tabs">
 					<ul class="nav nav-tabs nav-justified">
-						<li ng-class="{active : tab === 1}"><a ng-click = "tab = 1">Pokedex</a></li>
-						<li ng-class="{active : tab === 2}"><a ng-click = "tab = 2">Stats</a></li>
-						<li ng-class="{active : tab === 3}"><a ng-click = "tab = 3">Evolution</a></li>
+						<li ng-class="{active : tabs.tab === 1}"><a ng-click = "tabs.selectTab(1)">Pokedex</a></li>
+						<li ng-class="{active : tabs.tab === 2}"><a ng-click = "tabs.selectTab(2)">Stats</a></li>
+						<li ng-class="{active : tabs.tab === 3}"><a ng-click = "tabs.selectTab(3)">Evolution</a></li>
 					</ul>
-					<div ng-init="tab = 1" class="tab-content">
+					<div class="tab-content">
 						<!-- Pokedex -->
-						<div ng-show = "tab === 1">
+						<div ng-show = "tabs.tab === 1">
 							<ul class="list-group">
 								<li class="list-group-item">
 									<strong>Type</strong>
@@ -72,7 +72,7 @@
 							</ul>
 						</div>
 						<!-- Stats -->
-						<div ng-show = "tab === 2">
+						<div ng-show = "tabs.tab ==== 2">
 							<ul class="list-group">
 								<li class="list-group-item">
 									<strong>HP</strong>
@@ -105,7 +105,7 @@
 							</ul>
 						</div>
 						<!-- Evolution -->
-						<div ng-show = "tab === 3">
+						<div ng-show = "tabs.tab === 3">
 							<div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
 								<a href="#">
 									<img ng-src="build/img/pokemons/{{pokemon | lowercase}}.jpg" alt="{{pokemon}} image" width="160">
