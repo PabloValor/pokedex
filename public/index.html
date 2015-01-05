@@ -134,12 +134,12 @@
 						<form action="" class="form-horizontal" role="form">
 							<div class="form-group">
 								<div class="col-sm-6">
-									<textarea ng-model="comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+									<textarea ng-model="cmtsCtlr.comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
 								</div>
 								<div class="col-sm-4">
-									<input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
+									<input ng-model="cmtsCtlr.comment.email" ng-disabled="cmtsCtlr.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
 									<label>
-										<input ng-model="comment.anonymous" type="checkbox" id="aonymous">
+										<input ng-change="cmtsCtlr.anonymousChanged()" ng-model="cmtsCtlr.comment.anonymous" type="checkbox">
 										Anonymous
 									</label>
 								</div>
@@ -149,13 +149,13 @@
 							</div>
 						</form>
 						<blockquote>
-							<p>{{comment.body}}</p>
+							<p>{{cmtsCtlr.comment.body}}</p>
 							<footer>
 								Comment by 
-								<a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">
-									{{comment.email}}
+								<a ng-if="!cmtsCtlr.comment.anonymous" href="mailto:{{cmtsCtlr.comment.email}}">
+									{{cmtsCtlr.comment.email}}
 								</a>
-								<em ng-if= "comment.anonymous">Anonymous</em>
+								<em ng-if= "cmtsCtlr.comment.anonymous">Anonymous</em>
 								 on <span>Jan 4, 2015, 23:15:00 PM</span>
 							</footer>
 						</blockquote>

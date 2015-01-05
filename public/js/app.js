@@ -32,12 +32,19 @@
 	});
 
 	app.controller('CommentsController', function() {
+		this.comment = {}; //current comment
 		this.comments = [];
 		this.show = false;
 
 		this.toggle = function() {
 			this.show = !this.show;
-		}
+		};
+
+		this.anonymousChanged = function() {
+			if(this.comment.anonymous === true) {
+				this.comment.email = "";
+			}
+		};
 	});
 
 	app.filter('imageify', function() {
