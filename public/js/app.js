@@ -31,6 +31,15 @@
 		}
 	});
 
+	app.controller('CommentsController', function() {
+		this.comments = [];
+		this.show = false;
+
+		this.toggle = function() {
+			this.show = !this.show;
+		}
+	});
+
 	app.filter('imageify', function() {
 		return function(input) {
 			var url = 'build/img/pokemons/' 

@@ -115,9 +115,56 @@
 							</div>
 						</div>
 					</div>
+					<!--/Tabs-->
 				</div>
 			</div>
-	</div>
+			<!-- Comments -->
+			<div ng-controller="CommentsController as cmtsCtlr">
+				<button ng-hide="cmtsCtlr.show" ng-click="cmtsCtlr.toggle()" class="btn btn-primary">
+					Show comments 
+					<span class="badge">
+						{{cmtsCtlr.comments.length}}
+					</span>
+				</button>
+				<div ng-show = "cmtsCtlr.show" class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Comments <button ng-click="cmtsCtlr.toggle()" class="close pull-right">&times;</button></h3>
+					</div>
+					<div class="panel-body">
+						<form action="" class="form-horizontal" role="form">
+							<div class="form-group">
+								<div class="col-sm-6">
+									<textarea placeholder="What do you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+								</div>
+								<div class="col-sm-4">
+									<input type="email" placeholder="Please enter your email address" class="form-control">
+									<label>
+										<input type="checkbox" id="aonymous">
+										Anonymous
+									</label>
+								</div>
+								<div class="col-sm-2">
+									<button class="btn">Comment</button>
+								</div>
+							</div>
+						</form>
+						<blockquote>
+							<p>Denunciado maquinola despedite de tu cuenta lince</p>
+							<footer>
+								Comment by <a href="mailto:hola@hola.com">hola@hola.com</a> on <span>Jan 4, 2015, 23:15:00 PM</span>
+							</footer>
+						</blockquote>
+						<blockquote>
+							<p>The best pokemon ever!</p>
+							<footer>
+								Comment by <a href="mailto:hola@hola.com">fanboy@otaku.com</a> on <span>Dec 24, 2014, 23:15:00 PM</span>
+							</footer>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+			<!-- /comments -->
+		</div>
 	<!-- /Pokemon -->
 	</div>	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
