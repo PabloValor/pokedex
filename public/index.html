@@ -53,49 +53,7 @@
 				</div>
 			</div>
 			<!-- Comments -->
-			<div ng-controller="CommentsController as cmtsCtlr">
-				<button ng-hide="cmtsCtlr.show" ng-click="cmtsCtlr.toggle()" class="btn btn-primary">
-					Show comments 
-					<span class="badge">
-						{{cmtsCtlr.comments.length}}
-					</span>
-				</button>
-				<div ng-show = "cmtsCtlr.show" class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Comments <button ng-click="cmtsCtlr.toggle()" class="close pull-right">&times;</button></h3>
-					</div>
-					<div class="panel-body">
-						<form name="commentsForm" ng-submit="commentsForm.$valid && cmtsCtlr.addComment()" class="form-horizontal" role="form" noValidate>
-							<div class="form-group">
-								<div class="col-sm-6">
-									<textarea ng-model="cmtsCtlr.comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}?" class="form-control" required></textarea>
-								</div>
-								<div class="col-sm-4">
-									<input ng-model="cmtsCtlr.comment.email" ng-disabled="cmtsCtlr.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control" ng-required="!cmtsCtlr.comment.anonymous">
-									<label>
-										<input ng-change="cmtsCtlr.anonymousChanged()" ng-model="cmtsCtlr.comment.anonymous" type="checkbox">
-										Anonymous
-									</label>
-								</div>
-								<div class="col-sm-2">
-									<button type="submit" class="btn">Comment</button>
-								</div>
-							</div>
-						</form>
-						<blockquote ng-repeat = "comment in cmtsCtlr.comments">
-							<p>{{comment.body}}</p>
-							<footer>
-								Comment by 
-								<a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">
-									{{comment.email}}
-								</a>
-								<em ng-if= "comment.anonymous">Anonymous</em>
-								 on <span>{{comment.date | date: 'medium'}}</span>
-							</footer>
-						</blockquote>
-					</div>
-				</div>
-			</div>
+				<pokemon-comments></pokemon-comments>
 			<!-- /comments -->
 		</div>
 	<!-- /Pokemon -->

@@ -31,28 +31,6 @@
 		}
 	});
 
-	app.controller('CommentsController', function() {
-		this.comment = {}; //current comment
-		this.comments = [];
-		this.show = false;
-
-		this.toggle = function() {
-			this.show = !this.show;
-		};
-
-		this.anonymousChanged = function() {
-			if(this.comment.anonymous === true) {
-				this.comment.email = "";
-			}
-		};
-
-		this.addComment = function() {
-			this.comment.date = Date.now();
-			this.comments.push(this.comment);
-			this.comment = {};
-		}
-	});
-
 	app.directive('pokemonName', function() {
 		return {
 			restrict: 'E',
@@ -87,6 +65,35 @@
 			templateUrl: '/partials/pokemon-evolution.html'
 		}
 	});
+
+	app.directive('pokemonComments', function() {
+		return {
+			restrict: 'E',
+			templateUrl: '/partials/pokemon-comments.html',
+			controller: function() {
+				this.comment = {}; //current comment
+				this.comments = [];
+				this.show = false;
+
+				this.toggle = function() {
+					this.show = !this.show;
+				};
+
+				this.anonymousChanged = function() {
+					if(this.comment.anonymous === true) {
+						this.comment.email = "";
+					}
+				};
+
+				this.addComment = function() {
+					this.comment.date = Date.now();
+					this.comments.push(this.comment);
+					this.comment = {};
+				};
+			},
+			controllerAs: 'cmtsCtlr'
+		}
+	})
 
 	app.filter('imageify', function() {
 		return function(input) {
