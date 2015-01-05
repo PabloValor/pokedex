@@ -1,1 +1,1 @@
-!function(){var o=angular.module("pokedex",["ngRoute","pokedex.controllers","pokemon.directives","pokemon.filters"]);o.config(["$routeProvider",function(o){o.when("/",{templateUrl:"views/pokemon.html",controller:"PokemonController",controllerAs:"pkmCtlr"})}])}();
+!function(){var o=angular.module("pokedex",["ngRoute","pokedex.controllers","pokemon.directives","pokemon.filters"]);o.config(["$routeProvider",function(o){o.when("/",{templateUrl:"views/pokemon.html",controller:"PokemonController",controllerAs:"pkmCtrl"})}])}();

@@ -8,10 +8,10 @@
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
-			.when('/',{
+			.when('/', {
 				templateUrl: 'views/pokemon.html',
 				controller: 'PokemonController',
-				controllerAs: 'pkmCtlr'
+				controllerAs: 'pkmCtrl'
 			});
 	}]);
 
