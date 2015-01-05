@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 	gutil = require('gulp-util');
 
 gulp.task('compress-javascript', function() {
-	gulp.src('./public/js/*.js')
+	gulp.src('./public/js/**/*.js')
 		.pipe(uglify())
 		.on('error',gutil.log)
 		.pipe(gulp.dest('./public/build/js'))
@@ -25,7 +25,7 @@ gulp.task('watch', function() {
 	refresh.listen();
 
 	gulp.watch('public/**/*.less', ['less']);
-	gulp.watch('public/js/*.js', ['compress-javascript']);
+	gulp.watch('public/js/**/*.js', ['compress-javascript']);
 });
 
 gulp.task('default', ['less', 'watch', 'compress-javascript']);
