@@ -45,6 +45,12 @@
 				this.comment.email = "";
 			}
 		};
+
+		this.addComment = function() {
+			this.comment.date = Date.now();
+			this.comments.push(this.comment);
+			this.comment = {};
+		}
 	});
 
 	app.filter('imageify', function() {

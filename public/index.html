@@ -131,7 +131,7 @@
 						<h3 class="panel-title">Comments <button ng-click="cmtsCtlr.toggle()" class="close pull-right">&times;</button></h3>
 					</div>
 					<div class="panel-body">
-						<form action="" class="form-horizontal" role="form">
+						<form ng-submit="cmtsCtlr.addComment()" class="form-horizontal" role="form">
 							<div class="form-group">
 								<div class="col-sm-6">
 									<textarea ng-model="cmtsCtlr.comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
@@ -144,19 +144,19 @@
 									</label>
 								</div>
 								<div class="col-sm-2">
-									<button class="btn">Comment</button>
+									<button type="submit" class="btn">Comment</button>
 								</div>
 							</div>
 						</form>
-						<blockquote>
-							<p>{{cmtsCtlr.comment.body}}</p>
+						<blockquote ng-repeat = "comment in cmtsCtlr.comments">
+							<p>{{comment.body}}</p>
 							<footer>
 								Comment by 
-								<a ng-if="!cmtsCtlr.comment.anonymous" href="mailto:{{cmtsCtlr.comment.email}}">
-									{{cmtsCtlr.comment.email}}
+								<a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">
+									{{comment.email}}
 								</a>
-								<em ng-if= "cmtsCtlr.comment.anonymous">Anonymous</em>
-								 on <span>Jan 4, 2015, 23:15:00 PM</span>
+								<em ng-if= "comment.anonymous">Anonymous</em>
+								 on <span>{{comment.date | date: "MMM dd, yyyy, h:mm:ss a"}}</span>
 							</footer>
 						</blockquote>
 					</div>
