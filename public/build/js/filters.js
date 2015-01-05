@@ -1,0 +1,1 @@
+!function(){angular.module("pokemon.filters",[]).filter("imageify",function(){return function(n){var e="build/img/pokemons/"+n.toLowerCase()+".jpg";return e}})}();
