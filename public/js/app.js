@@ -53,6 +53,13 @@
 		}
 	});
 
+	app.directive('pokemonData', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'partials/pokemon-data.html'
+		}
+	});
+
 	app.filter('imageify', function() {
 		return function(input) {
 			var url = 'build/img/pokemons/' 
