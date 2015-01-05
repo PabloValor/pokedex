@@ -131,13 +131,13 @@
 						<h3 class="panel-title">Comments <button ng-click="cmtsCtlr.toggle()" class="close pull-right">&times;</button></h3>
 					</div>
 					<div class="panel-body">
-						<form ng-submit="cmtsCtlr.addComment()" class="form-horizontal" role="form">
+						<form name="commentsForm" ng-submit="commentsForm.$valid && cmtsCtlr.addComment()" class="form-horizontal" role="form" noValidate>
 							<div class="form-group">
 								<div class="col-sm-6">
-									<textarea ng-model="cmtsCtlr.comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+									<textarea ng-model="cmtsCtlr.comment.body" placeholder="What do you think about {{pkmCtrl.pokemon.name}}?" class="form-control" required></textarea>
 								</div>
 								<div class="col-sm-4">
-									<input ng-model="cmtsCtlr.comment.email" ng-disabled="cmtsCtlr.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
+									<input ng-model="cmtsCtlr.comment.email" ng-disabled="cmtsCtlr.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control" ng-required="!cmtsCtlr.comment.anonymous">
 									<label>
 										<input ng-change="cmtsCtlr.anonymousChanged()" ng-model="cmtsCtlr.comment.anonymous" type="checkbox">
 										Anonymous
@@ -148,6 +148,7 @@
 								</div>
 							</div>
 						</form>
+						<div ng-if="!commentsForm.$valid" class="alert alert-danger">Formulario invalido</div>
 						<blockquote ng-repeat = "comment in cmtsCtlr.comments">
 							<p>{{comment.body}}</p>
 							<footer>
@@ -156,7 +157,7 @@
 									{{comment.email}}
 								</a>
 								<em ng-if= "comment.anonymous">Anonymous</em>
-								 on <span>{{comment.date | date: "MMM dd, yyyy, h:mm:ss a"}}</span>
+								 on <span>{{comment.date | date: 'medium'}}</span>
 							</footer>
 						</blockquote>
 					</div>
