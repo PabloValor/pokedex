@@ -1,0 +1,9 @@
+<div ng-show = "tabs.tab === 3">
+	<div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
+		<a href="#">
+			<img ng-src="{{pokemon | imageify}}" alt="{{pokemon}} image" width="160">
+			<p><strong>{{pokemon}}</strong></p>
+		</a>
+		<span ng-hide="$last" class="glyphicon glyphicon-chevron-down"></span>
+	</div>
+</div>
