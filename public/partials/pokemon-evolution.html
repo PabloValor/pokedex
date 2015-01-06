@@ -1,6 +1,6 @@
 <div ng-show = "tabs.tab === 3">
 	<div class="text-center" ng-repeat="pokemon in pokemon.evolution">
-		<a href="#">
+		<a href="/#/pokemon/{{pokemon | normalize}}">
 			<img ng-src="{{pokemon | imageify}}" alt="{{pokemon}} image" width="160">
 			<p><strong>{{pokemon}}</strong></p>
 		</a>
