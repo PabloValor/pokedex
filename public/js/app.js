@@ -3,7 +3,8 @@
 		'ngRoute',
 		'pokedex.controllers',
 		'pokemon.directives',
-		'pokemon.filters'
+		'pokemon.filters',
+		'pokedex.services'
 	]);
 
 	app.config(['$routeProvider', function($routeProvider) {
