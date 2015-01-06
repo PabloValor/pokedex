@@ -1,22 +1,22 @@
 <ul class="list-group">
 	<li class="list-group-item">
 		<strong>Type</strong>
-		<span  ng-repeat ="type in pkmCtrl.pokemon.type" class="pull-right">
+		<span  ng-repeat ="type in pokemon.type" class="pull-right">
 			<span class="label label-primary type-{{type | lowercase}}">
 				{{type}}
 			</span>	
 		</span>
 	</li>
 	<li class="list-group-item">
-		<strong>Height</strong><span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
+		<strong>Height</strong><span class="pull-right">{{pokemon.height}}</span>
 	</li>
 	<li class="list-group-item">
-		<strong>Weight</strong><span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
+		<strong>Weight</strong><span class="pull-right">{{pokemon.weight}}</span>
 	</li>
 	<li class="list-group-item">
 		<strong>Abillities</strong><span class="pull-right">
 			<ul class="abillities">
-				<li ng-repeat="ability in pkmCtrl.pokemon.abillities">
+				<li ng-repeat="ability in pokemon.abillities">
 					{{ability}}
 				</li>
 			</ul>

@@ -1,12 +1,22 @@
 (function() {
 	angular.module('pokemon.filters', [])
 
-	.filter('imageify', function() {
+	.filter('normalize', function() {
+		return function(input) {
+			input = input
+					.replace('♀','f')
+					.replace('♂','m')
+					.replace(/\W+/g, '')
+			return input.toLowerCase();
+		}
+	})
+
+	.filter('imageify', ['$filter',function($filter) {
 		return function(input) {
 			var url = 'build/img/pokemons/' 
-				+ input.toLowerCase() + '.jpg';
+				+ $filter('normalize')(input) + '.jpg';
 			return url;
 		}
-	});
+	}]);
 
 })();
