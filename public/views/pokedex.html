@@ -1,17 +1,29 @@
 <div>
 	<div class="page-header">
-		<h1>Pokédex
-			<small class="pull-right">
-				Showing <span class="label label-primary">{{pokemons.length}}</span> pokemons
-			</small>
-		</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<h1>Pokédex</h1>
+				</div>
+				<div class="col-sm-8">
+					<h2 class="pull-right">
+						Showing <span class="label label-primary">{{pokemons.length}}</span> pokemons
+					</h2>		
+				</div>
+			</div>
+		</div>
 	</div>
-	<div ng-repeat="pokemon in pokemons" class="pokemon">
-		<a href="/#pokemon/{{pokemon.name | normalize}}">
+	<div ng-repeat="pokemon in pokemons" class="pokemon panel panel-primary">
+		<div class="panel-heading">
 			<pokemon-name></pokemon-name>
-			<pokemon-image></pokemon-image>
-			<hr>
+		</div>
+		<div class="panel-body">
+			<a href="/#pokemon/{{pokemon.name | normalize}}">
+				<pokemon-image></pokemon-image>
+			</a>
+		</div>
+		<div class="panel-footer">
 			<pokemon-type></pokemon-type>
-		</a>
+		</div>
 	</div>
 </div>
