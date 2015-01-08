@@ -114,14 +114,14 @@ ul.abillities{
 }
 
 .pokemon {
+	border-width: 2px;
+	height: 470px;
+	min-width: 367px;
 
 	&:hover {
 		border-color: red;
 		box-shadow: 6px 6px 2px #888888;
 	}
-
-	border-width: 2px;
-	height: 470px;
 	a {
 		text-decoration: none;
 	}
@@ -143,5 +143,11 @@ ul.abillities{
 		p {
 			margin-top: 10px;
 		}
+	}
+}
+
+@media screen and (max-width: 461px) {
+	.page-header h2 {
+		font-size: 21px;
 	}
 }
