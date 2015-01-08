@@ -4,7 +4,15 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	gutil = require('gulp-util'),
 	concat = require('gulp-concat'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
+	imagemin = require('gulp-imagemin');
+
+gulp.task('compress-images', function() {
+	gulp.src(['./public/img/**/*.jpg'])
+		.pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
+		.pipe(gulp.dest('./public/build/img/'))
+		.on('error',gutil.log);
+});
 
 gulp.task('compress-javascript', function() {
 	gulp.src([
@@ -34,6 +42,7 @@ gulp.task('watch', function() {
 
 	gulp.watch('public/**/*.less', ['less']);
 	gulp.watch('public/js/**/*.js', ['compress-javascript']);
+	gulp.watch('public/img/**/*.jpg', ['compress-images']);
 });
 
-gulp.task('default', ['less', 'watch', 'compress-javascript']);
+gulp.task('default', ['less', 'watch', 'compress-javascript', 'compress-images']);
