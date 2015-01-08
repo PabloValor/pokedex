@@ -1,11 +1,13 @@
 <ul class="list-group">
 	<li class="list-group-item">
 		<strong>Type</strong>
-		<span  ng-repeat ="type in pokemon.type" class="pull-right">
-			<span class="label label-primary type-{{type | lowercase}}">
-				{{type}}
-			</span>	
-		</span>
+		<a href="/#{{type}}" ng-repeat ="type in pokemon.type">
+			<span class="pull-right">
+				<span class="label label-primary type-{{type | lowercase}}">
+					{{type}}
+				</span>	
+			</span>
+		</a>
 	</li>
 	<li class="list-group-item">
 		<strong>Height</strong><span class="pull-right">{{pokemon.height}}</span>
