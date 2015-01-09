@@ -16,6 +16,8 @@ gulp.task('compress-images', function() {
 
 gulp.task('compress-javascript', function() {
 	gulp.src([
+			'./public/js/lib/jquery-2.1.3.min.js',
+			'./public/js/lib/bootstrap.min.js',
 			'./public/js/lib/underscore.min.js',
 			'./public/js/lib/angular-route.min.js',
 			'./public/js/*.js'
