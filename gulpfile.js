@@ -6,7 +6,14 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	imagemin = require('gulp-imagemin'),
-	minifyCSS = require('gulp-minify-css');
+	minifyCSS = require('gulp-minify-css'),
+	jsonminify = require('gulp-jsonminify');
+
+gulp.task('compress-json', function() {
+	gulp.src('/public/pokemons.json')
+		.pipe(jsonminify())
+		.pipe(gulp.dest('/public/pokemons.json'));
+});
 
 gulp.task('compress-images', function() {
 	gulp.src(['./public/img/**/*.jpg'])
@@ -49,4 +56,4 @@ gulp.task('watch', function() {
 	gulp.watch('public/img/**/*.jpg', ['compress-images']);
 });
 
-gulp.task('default', ['less', 'watch', 'compress-javascript', 'compress-images']);
+gulp.task('default', ['less', 'watch', 'compress-javascript', 'compress-images', 'compress-json']);
