@@ -5,7 +5,8 @@ var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
-	imagemin = require('gulp-imagemin');
+	imagemin = require('gulp-imagemin'),
+	minifyCSS = require('gulp-minify-css');
 
 gulp.task('compress-images', function() {
 	gulp.src(['./public/img/**/*.jpg'])
@@ -32,8 +33,9 @@ gulp.task('compress-javascript', function() {
 
 gulp.task('less', function() {
 	gulp.src('./public/css/pokedex.less')
-		.pipe(less({compress: true}))
+		.pipe(less())
 		.on('error', gutil.log)
+		.pipe(minifyCSS({keepSpecialComments: 0}))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('./public/build/css'))
 		.pipe(refresh());
