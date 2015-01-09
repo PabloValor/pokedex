@@ -43,6 +43,31 @@
 		this.selectTab = function(tab) {
 			this.tab = tab;
 		}
-	});
+	})
+
+	.controller('CommentsController', ['$routeParams', function($routeParams){
+		this.name = $routeParams.name;
+
+		this.comment = {}; //current comment
+		this.comments = [];
+		this.show = false;
+
+		this.toggle = function() {
+			this.show = !this.show;
+		};
+
+		this.anonymousChanged = function() {
+			if(this.comment.anonymous === true) {
+				this.comment.email = "";
+			}
+		};
+
+		this.addComment = function() {
+			this.comment.date = Date.now();
+			this.comments.push(this.comment);
+			this.comment = {};
+		};
+			
+	}]);
 
 })(_);

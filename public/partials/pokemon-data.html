@@ -16,12 +16,17 @@
 		<strong>Weight</strong><span class="pull-right"><strong>{{pokemon.weight}}</strong></span>
 	</li>
 	<li class="list-group-item">
-		<strong>Abillities</strong><span class="pull-right">
-			<ul class="abillities">
-				<li ng-repeat="ability in pokemon.abilities">
-					<strong>{{ability}}</strong>
-				</li>
-			</ul>
-		</span>
+		<div class="row">
+			<div class="col-xs-3"><strong>Abillities</strong></div>
+			<div class="col-xs-9">
+				<span class="pull-right">
+					<ul class="abillities">
+						<li ng-repeat="ability in pokemon.abilities">
+							<strong>{{ability}}</strong>
+						</li>
+					</ul>
+				</span>
+			</div>
+		</div>
 	</li>
 </ul>
