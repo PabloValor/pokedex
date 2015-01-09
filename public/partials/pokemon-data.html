@@ -10,16 +10,16 @@
 		</a>
 	</li>
 	<li class="list-group-item">
-		<strong>Height</strong><span class="pull-right">{{pokemon.height}}</span>
+		<strong>Height</strong><span class="pull-right"><strong>{{pokemon.height}}</strong></span>
 	</li>
 	<li class="list-group-item">
-		<strong>Weight</strong><span class="pull-right">{{pokemon.weight}}</span>
+		<strong>Weight</strong><span class="pull-right"><strong>{{pokemon.weight}}</strong></span>
 	</li>
 	<li class="list-group-item">
 		<strong>Abillities</strong><span class="pull-right">
 			<ul class="abillities">
 				<li ng-repeat="ability in pokemon.abilities">
-					{{ability}}
+					<strong>{{ability}}</strong>
 				</li>
 			</ul>
 		</span>
