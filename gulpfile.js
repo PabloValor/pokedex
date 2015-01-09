@@ -16,7 +16,7 @@ gulp.task('compress-json', function() {
 });
 
 gulp.task('compress-images', function() {
-	gulp.src(['./public/img/**/*.jpg'])
+	gulp.src(['./public/img/**/*.*'])
 		.pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('./public/build/img/'))
 		.on('error',gutil.log);
