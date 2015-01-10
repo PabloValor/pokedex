@@ -4,6 +4,7 @@
 	.controller('PokedexController', ['$scope', '$routeParams', 'pokemonService', function($scope, $routeParams, pokemonService) {
 		
 		var type = $routeParams.type;
+		var pokemons = [];
 
 		if(type) {
 			pokemonService.byType(type).then(function(data) {

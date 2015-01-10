@@ -2,13 +2,20 @@
 	<div class="page-header">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12">
+					<form class="form-horizontal search-pokemon" role="search">
+				        <div class="form-group">
+				         <input type="text" class="form-control" placeholder="Search Pokemon">
+				        </div>
+		      		</form>
+				</div>
 				<div class="col-sm-6">
-					<h2 class="text-left">
+					<h2 class="text-center">
 						Showing <span class="label label-primary">{{pokemons.length}}</span> Pokémons 
 					</h2>		
 				</div>
 				<div class="col-sm-6">
-					<h3 ng-if="type">
+					<h3 ng-if="type" class="text-center">
 						Filtered by type
 						<span class="label label-primary type-{{type | lowercase}}">
 							{{type}}
