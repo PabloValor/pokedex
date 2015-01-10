@@ -56,4 +56,4 @@ gulp.task('watch', function() {
 	gulp.watch('public/img/**/*.jpg', ['compress-images']);
 });
 
-gulp.task('default', ['less', 'watch', 'compress-javascript', 'compress-images', 'compress-json']);
+gulp.task('default', ['less', 'watch', 'compress-javascript', 'compress-json']);
