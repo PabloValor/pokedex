@@ -47,8 +47,7 @@
 		return {
 			restrict: 'E',
 			templateUrl: '/partials/pokemon-comments.html',
-			controller: 'CommentsController',
-			controllerAs: 'cmtsCtlr'
+			controller: 'CommentsController'
 		}
 	});
 

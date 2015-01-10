@@ -45,27 +45,27 @@
 		}
 	})
 
-	.controller('CommentsController', ['$routeParams', function($routeParams){
-		this.name = $routeParams.name;
+	.controller('CommentsController', ['$scope','$routeParams', function($scope,$routeParams){
+		$scope.name = $routeParams.name;
 
-		this.comment = {}; //current comment
-		this.comments = [];
-		this.show = false;
+		$scope.comment = {}; //current comment
+		$scope.comments = [];
+		$scope.show = false;
 
-		this.toggle = function() {
-			this.show = !this.show;
+		$scope.toggle = function() {
+			$scope.show = !$scope.show;
 		};
 
 		this.anonymousChanged = function() {
-			if(this.comment.anonymous === true) {
-				this.comment.email = "";
+			if($scope.comment.anonymous === true) {
+				$scope.comment.email = "";
 			}
 		};
 
-		this.addComment = function() {
-			this.comment.date = Date.now();
-			this.comments.push(this.comment);
-			this.comment = {};
+		$scope.addComment = function() {
+			$scope.comment.date = Date.now();
+			$scope.comments.push($scope.comment);
+			$scope.comment = {};
 		};
 			
 	}]);
